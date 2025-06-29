@@ -88,7 +88,7 @@ const UserAction = ({ configData, setUserInfo }) => {
   useEffect(() => {
     async function checkExistingOrder() {
       if (user && user.email) {
-        const { data, error } = await supabase
+        const { data } = await supabase
           .from('orders')
           .select('*')
           .eq('email', user.email)
