@@ -50,27 +50,20 @@
   align-items: center;
   gap: 12px;
   margin-bottom: 20px;
-}
-
-.footer-logo .logo-icon {
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  justify-content: flex-start;
+  width: 100%;
 }
 
 .footer-logo .logo-text {
-  font-size: 1.25rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  letter-spacing: -0.5px;
 }
 
 .footer-description {
@@ -78,6 +71,7 @@
   line-height: 1.6;
   margin-bottom: 24px;
   font-size: 0.95rem;
+  text-align: left;
 }
 
 /* Social Links */
@@ -258,10 +252,35 @@
   gap: 16px;
 }
 
+.footer-bottom-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .footer-bottom-content p {
   color: #94a3b8;
   font-size: 0.85rem;
   margin: 0;
+}
+
+.footer-copyright {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.footer-copyright a {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.footer-copyright a:hover {
+  color: #3b82f6;
+  text-decoration: underline;
 }
 
 .footer-bottom-links {
@@ -320,6 +339,11 @@
   .footer-section:first-child {
     grid-column: 1 / -1;
   }
+  
+  .footer-logo {
+    justify-content: flex-start;
+    text-align: left;
+  }
 }
 
 @media (max-width: 768px) {
@@ -327,6 +351,12 @@
     grid-template-columns: 1fr;
     gap: 32px;
     padding: 40px 0 32px;
+  }
+  
+  .footer-logo {
+    justify-content: flex-start;
+    text-align: left;
+    margin-left: 0;
   }
   
   .footer-bottom-content {
@@ -359,6 +389,13 @@
 @media (max-width: 480px) {
   .footer-content {
     padding: 32px 0 24px;
+  }
+  
+  .footer-logo {
+    justify-content: flex-start;
+    text-align: left;
+    margin-left: 0;
+    width: 100%;
   }
   
   .footer-section h3 {

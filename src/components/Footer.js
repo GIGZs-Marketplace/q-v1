@@ -2,16 +2,15 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
-  Rocket,
-  Mail,
-  Phone,
-  MapPin,
   Twitter,
   Linkedin,
   Facebook,
   Instagram,
   Github,
-  ArrowUp
+  Mail,
+  Phone,
+  MapPin,
+  ChevronUp
 } from 'lucide-react';
 import './Footer.css';
 
@@ -54,9 +53,6 @@ const Footer = () => {
           {/* Company Info */}
           <div className="footer-section">
             <div className="footer-logo">
-              <div className="logo-icon">
-                <Rocket size={24} />
-              </div>
               <span className="logo-text">Q.</span>
             </div>
             <p className="footer-description">
@@ -209,15 +205,15 @@ const Footer = () => {
             <div className="contact-info">
               <div className="contact-item">
                 <Mail size={16} />
-                <span>hello@q.com</span>
+                <span>q@gigzs.com</span>
               </div>
               <div className="contact-item">
                 <Phone size={16} />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 9724823602</span>
               </div>
               <div className="contact-item">
                 <MapPin size={16} />
-                <span>San Francisco, CA</span>
+                <span>Bangalore, Karnataka, India</span>
               </div>
             </div>
             <div className="newsletter">
@@ -240,7 +236,13 @@ const Footer = () => {
         {/* Footer Bottom */}
         <div className="footer-bottom">
           <div className="footer-bottom-content">
-            <p>&copy; {currentYear} Q. All rights reserved.</p>
+            <div className="footer-bottom-left">
+              <p className="footer-copyright">
+                &copy; {currentYear} Q. All rights reserved. | 
+                Designed by <a href="https://uimitra.com" target="_blank" rel="noopener noreferrer">Uimitra</a> | 
+                Powered by <a href="https://gigzs.com" target="_blank" rel="noopener noreferrer">Gigzs</a>
+              </p>
+            </div>
             <div className="footer-bottom-links">
               <button onClick={() => scrollToSection('config-section')}>
                 Privacy Policy
@@ -263,7 +265,7 @@ const Footer = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
       >
-        <ArrowUp size={20} />
+        <ChevronUp size={20} />
       </motion.button>
     </footer>
   );

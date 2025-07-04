@@ -176,12 +176,6 @@ const Header = () => {
             ) : (
               <>
                 <button 
-                  className="btn btn-secondary"
-                  onClick={() => handleNavigation('/login')}
-                >
-                  Sign In
-                </button>
-                <button 
                   className="btn btn-primary"
                   onClick={() => handleNavigation('/configure')}
                 >

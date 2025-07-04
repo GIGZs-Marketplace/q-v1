@@ -274,7 +274,7 @@ const UserAction = ({ configData, setUserInfo }) => {
                             className="input"
                             value={formData.whatsapp}
                             onChange={handleInputChange}
-                            placeholder="+1 (555) 123-4567"
+                            placeholder="+91 9724823602"
                           />
                         </div>
                         <div className="form-group">

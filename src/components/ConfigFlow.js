@@ -24,7 +24,7 @@ const ConfigFlow = ({ configData, updateConfig }) => {
       title: 'Freelancer Portfolio',
       description: 'Showcase your work and attract new clients',
       icon: <Briefcase size={32} />,
-      basePrice: 999,
+      basePrice: 3499,
       baseTime: 2
     },
     {
@@ -32,7 +32,7 @@ const ConfigFlow = ({ configData, updateConfig }) => {
       title: 'Digital Service Store',
       description: 'Sell your services online with order processing',
       icon: <Store size={32} />,
-      basePrice: 1499,
+      basePrice: 4999,
       baseTime: 3
     },
     {
@@ -40,7 +40,7 @@ const ConfigFlow = ({ configData, updateConfig }) => {
       title: 'Info Website for Coach',
       description: 'Build authority and capture leads for your coaching business',
       icon: <UserCheck size={32} />,
-      basePrice: 1299,
+      basePrice: 3999,
       baseTime: 2
     },
     {
@@ -48,22 +48,26 @@ const ConfigFlow = ({ configData, updateConfig }) => {
       title: 'Product Selling (D2C)',
       description: 'Direct-to-consumer product sales with full e-commerce',
       icon: <ShoppingCart size={32} />,
-      basePrice: 2499,
+      basePrice: 7999,
       baseTime: 4
     }
   ];
 
   const features = [
-    { id: 'custom-domain', name: 'Custom Domain', price: 199, time: 0.5 },
-    { id: 'contact-form', name: 'Contact Form', price: 99, time: 0.5 },
-    { id: 'payment-gateway', name: 'Order Gateway', price: 299, time: 1 },
-    { id: 'whatsapp-chatbot', name: 'WhatsApp Chatbot', price: 399, time: 1 },
-    { id: 'analytics-dashboard', name: 'Analytics Dashboard', price: 249, time: 1 },
-    { id: 'blog-seo', name: 'Blog / SEO Module', price: 349, time: 1.5 },
-    { id: 'user-login', name: 'User Login System', price: 499, time: 2 },
-    { id: 'newsletter', name: 'Newsletter Integration', price: 199, time: 0.5 },
-    { id: 'ai-generator', name: 'AI Text Generator', price: 449, time: 1.5 }
+    { id: 'custom-domain', name: 'Custom Domain', price: 499, time: 0.5 },
+    { id: 'contact-form', name: 'Contact Form', price: 299, time: 0.5 },
+    { id: 'payment-gateway', name: 'Order Gateway', price: 799, time: 1 },
+    { id: 'whatsapp-chatbot', name: 'WhatsApp Chatbot', price: 999, time: 1 },
+    { id: 'analytics-dashboard', name: 'Analytics Dashboard', price: 699, time: 1 },
+    { id: 'blog-seo', name: 'Blog / SEO Module', price: 899, time: 1.5 },
+    { id: 'user-login', name: 'User Login System', price: 1299, time: 2 },
+    { id: 'newsletter', name: 'Newsletter Integration', price: 399, time: 0.5 },
+    { id: 'ai-generator', name: 'AI Text Generator', price: 1499, time: 1.5 }
   ];
+
+  function roundUpTo99(n) {
+    return Math.ceil((n + 1) / 100) * 100 - 1;
+  }
 
   const calculatePricing = () => {
     if (!selectedUseCase) return { price: 0, time: 0 };
@@ -79,8 +83,9 @@ const ConfigFlow = ({ configData, updateConfig }) => {
       return total + (feature ? feature.time : 0);
     }, 0);
     
+    const rawPrice = useCase.basePrice + featureCosts;
     return {
-      price: useCase.basePrice + featureCosts,
+      price: roundUpTo99(rawPrice),
       time: useCase.baseTime + featureTime
     };
   };
